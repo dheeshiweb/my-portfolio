@@ -1,0 +1,1281 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <link rel="stylesheet" href="portfolio.css">
+  <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgio, serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0d1729;
+    color: white;
+}
+
+/* Navigation */
+
+.navbar {
+    width: 100%;
+    padding: 25px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: #0d1729;
+}
+
+.logo {
+    color: mediumpurple;
+    font-size: 20px;
+}
+
+
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #bfc8d8;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #b477ff;
+}
+
+/* Home Background */
+
+.home {
+    min-height: auto;
+    padding: 70px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    position: relative;
+    overflow: hidden;
+
+    background:
+    radial-gradient(
+        circle at 80% 50%,
+        #25204b 0%,
+        transparent 40%
+    ),
+    #0d1729;
+}
+
+/* Left Content */
+
+.content {
+    max-width: 520px;
+    z-index: 1;
+}
+
+
+
+.content h1 {
+    font-size: 60px;
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+.content h1 span {
+    color: #a66cff;
+}
+
+.description {
+    color: #b9c2d2;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.contact-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid #a66cff;
+    padding: 14px 28px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.contact-btn:hover {
+    background: #a66cff;
+    box-shadow: 0 0 20px #a66cff;
+}
+
+/* Skills Tags */
+
+.skills-tags {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.skills-tags span {
+    background: #1a2941;
+    border: 1px solid #34425c;
+    color: #cbd5e5;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 13px;
+}
+
+
+/* Scroll Icon */
+
+.scroll {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    color: #a66cff;
+    font-size: 35px;
+}
+
+/* Other Sections */
+
+.other-section {
+    min-height: 300px;
+    padding: 90px 20px;
+    text-align: center;
+    background: #111b30;
+    border-top: 1px solid #292444;
+}
+
+.other-section h1 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.other-section h1 span {
+    color: #a66cff;
+}
+
+.other-section p {
+    color: #b9c2d2;
+    line-height: 1.8;
+}
+
+/* Mobile Responsive */
+
+@media(max-width: 750px) {
+
+    .navbar {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 18px;
+    }
+
+    .home {
+        min-height: auto;
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .content h1 {
+        font-size: 43px;
+    }
+
+    .skills-tags {
+        justify-content: center;
+    }
+
+    .terminal {
+        width: 310px;
+        transform: none;
+        margin-bottom: 35px;
+    }
+
+    .scroll {
+        display: none;
+    }
+}
+.skill-intro {
+    margin-top: 15px;
+    margin-bottom: 35px;
+    font-size: 18px;
+}
+
+.skill-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 550px;
+    margin: 30px auto;
+}
+
+.skill-card {
+    background: #1a2941;
+    border: 1px solid #51417e;
+    border-radius: 15px;
+    padding: 30px 15px;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 0 20px #a66cff55;
+}
+
+.skill-card h2 {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.skill-card h3 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.level {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.intermediate {
+    color: #c9a5ff;
+    background: #39245c;
+    border: 1px solid #a66cff;
+}
+
+.beginner {
+    color: #8ee6bd;
+    background: #173c35;
+    border: 1px solid #42b98c;
+}
+
+@media(max-width: 400px) {
+    .skill-container {
+        grid-template-columns: 1fr;
+    }
+  }
+    
+/* CERTIFICATE SECTION */
+
+.certificate-section {
+    padding: 80px 8%;
+    background: #0d1729;
+    text-align: center;
+    border-top: 1px solid #292444;
+}
+
+.certificate-section h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.certificate-section h1 span {
+    color: #a66cff;
+}
+
+.certificate-intro {
+    color: #b9c2d2;
+    line-height: 1.8;
+    margin-bottom: 45px;
+}
+
+/* LANDSCAPE CARDS */
+
+.certificate-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    text-align: left;
+    background: #1a2941;
+    border: 1px solid #51417e;
+    border-radius: 15px;
+    padding: 22px;
+    max-width: 1100px;
+    margin: 0 auto 35px;
+    transition: 0.3s;
+}
+
+.certificate-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px #a66cff55;
+    border-color: #a66cff;
+}
+
+/* PDF CERTIFICATE PREVIEW */
+
+.certificate-preview {
+    width: 60%;
+    height: 350px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.certificate-preview iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width: 750px) {
+
+    .certificate-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .certificate-preview {
+        width: 100%;
+        height: 300px;
+    }
+}
+/* DETAILS */
+
+.certificate-info {
+    flex: 1;
+}
+
+.certificate-info .tag {
+    color: #c9a5ff;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.certificate-info h2 {
+    font-size: 23px;
+    margin: 15px 0;
+}
+
+.certificate-info p {
+    color: #b9c2d2;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.certificate-info .date {
+    color: #c9a5ff;
+    margin: 15px 0 22px;
+}
+
+.view-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #8052c9;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 7px;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.view-btn:hover {
+    background: #a66cff;
+    box-shadow: 0 0 15px #a66cff;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width: 750px) {
+
+    .certificate-section {
+        padding: 55px 20px;
+    }
+
+    .certificate-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .certificate-preview {
+        width: 100%;
+    }
+
+    .certificate-info h2 {
+        font-size: 20px;
+    }
+}
+  /* CERTIFICATION SECTION */
+
+.certificate-section {
+    padding: 80px 5%;
+    text-align: center;
+    background:
+        radial-gradient(circle at top left, #28105a, transparent 40%),
+        radial-gradient(circle at bottom right, #240b50, transparent 40%),
+        #08051a;
+    border-top: 1px solid #35106e;
+}
+
+.certificate-section h1 {
+    font-size: 45px;
+    margin: 20px 0 10px;
+}
+
+.certificate-section h1 span {
+    color: #b026ff;
+    text-shadow: 0 0 15px #9b30ff;
+}
+
+.certificate-intro {
+    color: #d7c8f5;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* HEADING DECORATION */
+
+.cert-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.heading-line {
+    width: 100px;
+    height: 3px;
+    background: #b026ff;
+    box-shadow: 0 0 15px #b026ff;
+}
+
+.heading-icon {
+    font-size: 40px;
+}
+
+/* CERTIFICATE GRID */
+
+.certificate-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+/* CARD */
+
+.certificate-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+
+    padding: 25px;
+    border-radius: 20px;
+
+    background: linear-gradient(
+        135deg,
+        #1b0d3c,
+        #0d0924
+    );
+
+    border: 2px solid #7b20e8;
+
+    box-shadow:
+        0 0 12px #7b20e855,
+        inset 0 0 15px #6d1bd822;
+
+    transition: 0.4s;
+}
+
+.certificate-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #d14bff;
+
+    box-shadow:
+        0 0 25px #a020f055,
+        0 0 40px #8c20ff33;
+}
+
+/* ICON AREA */
+
+.certificate-icon {
+    width: 40%;
+    min-width: 120px;
+    height: 190px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-right: 2px solid #9c27ff;
+
+    background: radial-gradient(
+        circle,
+        #39116c,
+        transparent 70%
+    );
+}
+
+/* AI CHIP ICON */
+
+.ai-chip {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #9d28ff,
+        #3d0b8c
+    );
+
+    border: 4px solid #c46aff;
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 20px #a020f0,
+        inset 0 0 15px #e0aaff;
+
+    position: relative;
+}
+
+.ai-chip::before {
+    content: "";
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    border: 2px dashed #bd63ff;
+    border-radius: 25px;
+}
+
+.chip-text {
+    color: white;
+    font-size: 38px;
+    font-weight: bold;
+
+    text-shadow: 0 0 15px #ffffff;
+}
+
+/* PYTHON ICON */
+
+.laptop {
+    text-align: center;
+
+    padding: 15px;
+    border: 3px solid #9d4dff;
+    border-radius: 15px;
+
+    box-shadow: 0 0 20px #9d4dff;
+}
+
+.python-logo {
+    font-size: 55px;
+}
+
+.laptop p {
+    color: #d9b3ff;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+/* JAVA ICON */
+
+.java-symbol {
+    font-size: 70px;
+    color: #ff9c28;
+
+    text-shadow: 0 0 20px #ff8c00;
+}
+
+.java-icon p {
+    color: #d9b3ff;
+    font-size: 12px;
+}
+
+/* DETAILS */
+
+.certificate-info {
+    flex: 1;
+}
+
+.tag {
+    display: inline-block;
+
+    padding: 8px 12px;
+    border-radius: 20px;
+
+    background: #4a168c;
+    color: white;
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.certificate-info h2 {
+    font-size: 21px;
+    margin: 15px 0;
+    color: white;
+}
+
+.certificate-info p {
+    color: #d9cbed;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.date {
+    margin: 15px 0;
+    color: #d4a4ff !important;
+}
+
+/* BUTTON */
+
+.view-btn {
+    display: inline-block;
+
+    padding: 10px 18px;
+    border-radius: 30px;
+
+    color: white;
+    text-decoration: none;
+
+    border: 2px solid #b026ff;
+
+    transition: 0.3s;
+}
+
+.view-btn:hover {
+    background: light violet;
+
+    box-shadow: 0 0 20px light violet;
+}
+
+/* FOOTER */
+
+.certificate-footer {
+    margin-top: 40px;
+
+    font-size: 23px;
+    font-style: italic;
+    font-weight: bold;
+
+    color: light violet;
+
+    text-shadow: 0 0 15px light violet;
+}
+
+/* MOBILE */
+
+@media(max-width: 750px) {
+
+    .certificate-container {
+        grid-template-columns: 1fr;
+    }
+
+    .certificate-card {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .certificate-icon {
+        width: 35%;
+        min-width: 100px;
+        height: 160px;
+    }
+
+    .certificate-info h2 {
+        font-size: 17px;
+    }
+
+    .tag {
+        font-size: 9px;
+    }
+
+    .certificate-section h1 {
+        font-size: 32px;
+    }
+
+    .certificate-footer {
+        font-size: 18px;
+    }
+    }
+    /* CERTIFICATE SECTION */
+
+.certificate-section {
+padding: 80px 8%;
+text-align: center;
+background: #0d1729;
+}
+
+.certificate-section h1 {
+font-size: 38px;
+color: white;
+margin-bottom: 15px;
+}
+
+.certificate-section h1 span {
+color: #a66cff;
+}
+
+.certificate-intro {
+color: #b9c2d2;
+font-size: 18px;
+margin-bottom: 45px;
+}
+
+/* CERTIFICATE CONTAINER */
+
+.certificate-container {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 25px;
+max-width: 1100px;
+margin: auto;
+}
+
+/* CERTIFICATE FRONT CARD */
+
+.certificate-front {
+padding: 30px 25px;
+background: #1a2941;
+border: 2px solid #a66cff;
+border-radius: 30px;
+box-shadow: 0 0 20px #a66cff33;
+color: white;
+text-align: center;
+transition: 0.3s;
+}
+
+.certificate-front:hover {
+transform: translateY(-5px);
+box-shadow: 0 0 30px #a66cff66;
+border-color: #c77dff;
+}
+
+/* STATUS */
+
+.certificate-status {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 15px;
+margin-bottom: 25px;
+}
+
+.award-icon {
+font-size: 40px;
+color: #c77dff;
+}
+
+.completed {
+background: #8b5cf6;
+color: white;
+padding: 8px 18px;
+border-radius: 30px;
+font-size: 13px;
+font-weight: bold;
+}
+
+/* CONTENT */
+
+.certificate-tag {
+color: #c77dff;
+font-size: 16px;
+font-weight: bold;
+margin-bottom: 20px;
+}
+
+.certificate-front h2 {
+font-size: 25px;
+line-height: 1.5;
+margin-bottom: 20px;
+}
+
+.organization {
+color: #d9c8f5;
+font-size: 17px;
+margin-bottom: 30px;
+}
+
+.certificate-front hr {
+border: none;
+height: 1px;
+background: #a66cff;
+margin: 25px 0;
+}
+
+.certificate-date {
+font-size: 18px;
+font-weight: bold;
+margin-bottom: 25px;
+}
+
+.bootcamp {
+color: #c77dff;
+font-size: 18px;
+font-weight: bold;
+margin-bottom: 25px;
+}
+
+/* CERTIFICATE EARNED */
+
+.earned {
+display: inline-block;
+background: #8b5cf6;
+color: white;
+padding: 10px 22px;
+border-radius: 30px;
+font-weight: bold;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width: 750px) {
+
+.certificate-section {
+    padding: 55px 20px;
+}
+
+.certificate-container {
+    grid-template-columns: 1fr;
+}
+
+.certificate-front {
+    padding: 25px 18px;
+}
+
+.certificate-front h2 {
+    font-size: 24px;
+}
+
+.organization {
+    font-size: 15px;
+}
+
+.certificate-date {
+    font-size: 17px;
+}
+
+}
+    #contact {
+    text-align: center;
+    padding: 60px 20px;
+    background: #0d1729;
+    color: white;
+}
+
+#contact h2 {
+    font-size: 40px;
+    color: mediumpurple;
+}
+
+#contact p {
+    color: #c5c5d8;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.contact-card {
+    width: 220px;
+    padding: 25px;
+    background: #171f35;
+    border: 2px solid #9370db;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    transition: 0.4s;
+}
+
+.contact-card h3 {
+    color: #c4a5ff;
+    font-size: 23px;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px mediumpurple;
+    background: #282044;
+}
+    /* Thank You Section */
+
+.thankyou-section {
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+
+    background: ( #0d1729
+    );
+
+    color: white;
+}
+
+.thankyou-content {
+    max-width: 800px;
+}
+
+.thankyou-subtitle {
+    color: #b99aff;
+    letter-spacing: 4px;
+    font-size: 14px;
+}
+
+.thankyou-content h1 {
+    font-size: 55px;
+    color: #c4a5ff;
+    margin: 20px 0;
+    
+}
+
+.thankyou-content h2 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.thankyou-message {
+    font-size: 18px;
+    color: #c4a5ff;
+    margin-top: 20px;
+}
+
+.thankyou-line {
+    width: 250px;
+    height: 3px;
+    background: mediumpurple;
+    margin: 20px auto;
+    border-radius: 30px;
+}
+
+.thankyou-footer {
+    color: #b8b8ce;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+</style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+       
+      <h2 class="logo"> WELCOME TO MY DIGITAL SPACE</h2>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Certifications</a>
+    
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section class="home" id="home">
+
+        <div class="content">
+            
+
+            <h1>
+                Aspiring Full Stack<br>
+                <span>Developer</span>
+            </h1>
+
+            <p class="description">
+                I create beautiful digital experiences
+                with modern technologies and innovative
+                solutions.
+            </p>
+
+            <a href="#contact" class="contact-btn">
+                Contact Me →
+            </a>
+
+            <div class="skills-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Java</span>
+                <span>Python</span>
+            </div>
+        </div>
+
+        
+        <div class="scroll">↓</div>
+
+    </section>
+
+    <!-- About -->
+    <section class="other-section" id="about">
+        <h1>About <span>Me</span></h1>
+        <p>I am a Computer Science Engineering student who is passionate about technology and programming. I have completed my higher secondary education with 86% in the Biology-Maths group. Currently, I am learning Python, Java, HTML and CSS to improve my coding skills. I enjoy exploring new technologies, learning new things, and creating innovative projects. My goal is to become a skilled developer and build useful applications.</p>
+    </section>
+
+    <!-- Skills -->
+    <section class="other-section" id="skills">
+
+    <h1>My <span>Skills</span></h1>
+
+    <p class="skill-intro">
+        My Technical Skills & Knowledge
+    </p>
+
+    <div class="skill-container">
+
+        <div class="skill-card">
+            <h2>🌐</h2>
+            <h3>HTML</h3>
+          <p>Web Page Structure</p>
+          <br>
+            <span class="level intermediate">Intermediate</span>
+        </div>
+
+        <div class="skill-card">
+            <h2>🎨</h2>
+            <h3>CSS</h3>
+            <p>Web Page Styling</p>
+          <br>
+            <span class="level beginner">Beginner</span>
+        </div>
+
+        <div class="skill-card">
+            <h2>☕</h2>
+            <h3>Java</h3>
+          <p>Programming</p>
+          <br>
+            <span class="level beginner">Beginner</span>
+        </div>
+
+        <div class="skill-card">
+            <h2>🐍</h2>
+            <h3>Python</h3>
+          <p>Problem solving</p>
+          <br>
+            <span class="level beginner">Beginner</span>
+        </div>
+
+    </div>
+
+    </section>
+  <!-- CERTIFICATIONS SECTION --><section class="certificate-section" id="projects"><h1>My <span>Certifications</span></h1>
+
+<p class="certificate-intro">
+    My Learning Journey & Achievements
+</p>
+
+<div class="certificate-container">
+
+    <!-- CERTIFICATE 1 -->
+
+    <div class="certificate-front">
+
+        <div class="certificate-status">
+            <span class="award-icon">♕</span>
+            <span class="completed">COMPLETED</span>
+        </div>
+
+        <p class="certificate-tag">DATA SCIENCE</p>
+
+        <h2>Python for Data Science</h2>
+
+        <p class="organization">NPTEL</p>
+
+        <hr>
+
+        <p class="certificate-date">📅 July - August 2026</p>
+
+        <p class="bootcamp">Score: 58%</p>
+
+        <div class="earned">✦ Certificate Earned ✦</div>
+
+    </div>
+
+
+    <!-- CERTIFICATE 2 -->
+
+    <div class="certificate-front">
+
+        <div class="certificate-status">
+            <span class="award-icon">♕</span>
+            <span class="completed">COMPLETED</span>
+        </div>
+
+        <p class="certificate-tag">FULL STACK DEVELOPMENT</p>
+
+        <h2>AI-Powered Full Stack Feature</h2>
+
+        <p class="organization">
+            NoviTech R&D Private Limited
+        </p>
+
+        <hr>
+
+        <p class="certificate-date">📅 03 October 2026</p>
+
+        <p class="bootcamp">2 Hour Bootcamp</p>
+
+        <div class="earned">✦ Certificate Earned ✦</div>
+
+    </div>
+
+
+    <!-- CERTIFICATE 3 -->
+
+    <div class="certificate-front">
+
+        <div class="certificate-status">
+            <span class="award-icon">♕</span>
+            <span class="completed">COMPLETED</span>
+        </div>
+
+        <p class="certificate-tag">PROGRAMMING</p>
+
+        <h2>Java Programming for Beginners</h2>
+
+        <p class="organization">
+            Java Programming Course
+        </p>
+
+        <hr>
+
+        <p class="certificate-date">📅 23 August 2026</p>
+
+        <p class="bootcamp">Programming Course</p>
+
+        <div class="earned">✦ Certificate Earned ✦</div>
+
+    </div>
+
+
+    <!-- CERTIFICATE 4 -->
+
+    <div class="certificate-front">
+
+        <div class="certificate-status">
+            <span class="award-icon">♕</span>
+            <span class="completed">COMPLETED</span>
+        </div>
+
+        <p class="certificate-tag">DEVELOPMENT</p>
+
+        <h2>Development to Deployment</h2>
+
+        <p class="organization">
+            NoviTech R&D Private Limited
+        </p>
+
+        <hr>
+
+        <p class="certificate-date">📅 01 January 2026</p>
+
+        <p class="bootcamp">2 Hour Workshop</p>
+
+        <div class="earned">✦ Certificate Earned ✦</div>
+
+    </div>
+
+</div>
+
+  </section>
+
+    <!-- Contact -->
+    <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Let's connect and create something amazing!</p>
+
+    <div class="contact-container">
+
+        <a href="https://www.linkedin.com/in/𝗗𝗵𝗮𝗿𝘀𝗵𝗶𝗻𝗶-r-2b3905428?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+   target="_blank"
+   class="contact-card">
+
+    <h3>LinkedIn</h3>
+    <p>Connect with me</p>
+    <span class="click-text">Click to Connect ↗</span>
+
+        </a>
+
+        <a href="https://github.com/dheeshiweb"
+   target="_blank"
+   class="contact-card">
+
+    <h3>GitHub</h3>
+    <p>Explore my projects</p>
+    <span class="click-text">View Projects ↗</span>
+
+        </a>
+
+        <a href="mailto:dharahini213@gmail.com"
+           class="contact-card">
+            
+            <h3>Email</h3>
+             
+            <p> Get in touch </p>
+              <span class="click-text">Send me a message↗</span>
+        </a>
+
+    </div>
+    </section>
+  <!-- Thank You Section -->
+
+<section class="thankyou-section">
+
+    <div class="thankyou-content">
+      <div class="thankyou-line"></div>
+
+        <p class="thankyou-subtitle">
+            PORTFOLIO • 2026
+        </p>
+
+        <h1>Thank You</h1>
+
+        <h3>
+            Thank You for Visiting my portfolio.
+        </h3>
+
+        <p class="thankyou-message">
+            Dream • Learn • Code • Grow
+        </p>
+
+        <div class="thankyou-line"></div>
+
+        <p class="thankyou-footer">
+            Dharshini R | Aspiring Full Stack Developer
+        </p>
+
+    </div>
+
+</section>
+
+</body>
+</html>
